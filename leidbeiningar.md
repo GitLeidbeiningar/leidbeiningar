@@ -63,8 +63,62 @@ Eftir að við höfum installað git á tölvuna okkar þá skulum við opna com
  git clone https://github.com/GitLeidbeiningar/leidbeiningar.git
  ```
 
-Þá erum við komin með tómt repository í tölvuna okkar.
+Þá erum við komin með nýja möppu sem heitir leidbeiningar. Mappan heitir það sama og repo-ið heitir sem ég bjó til og klónaði, svo hún mun auðvitað heita eitthvað annað í ykkar tilfelli.... eins og til dæmis `supreme-enigma` eða `Verkefni 6`.
 
+![Emtpy Directory](/empty-directory-repository.png)
+
+### Bætum við skrám og pushum.
+
+Inní þessari möppu ætla ég núna að búa til leiðbeiningar fyrir github. Ég tók nokkrar myndir og skrifaði markdown skjal og þá lítur mappan mín svona út:
+
+![Full Directory](/full-directory-repository.png)
+
+Núna fer ég aftur í command line og prófa að skrifa git status. Ég nota `git status` oft til að sjá hvað er ástandið er á git repo-inu.
+
+![Git status](/git-status-1.png)
+
+Núna sjáum við allar skrárnar okkar rauðar. Þær eru Untracked. Eins og stendur getum við notað `git add` til þess að þær verði með næst þegar við gerum `git commit`. Skrifum inn:
+
+```sh
+ git add .
+ git status
+ ```
+
+![Git status](/git-status-2.png)
+
+Núna sjáum við allar skrárnar okkar grænar. Þær verða allar með næst þegar við gerum `git commit`. Við skulum gera það.
+
+```sh
+ git commit -m "first commit"
+ ```
+
+ ![Git commit](/git-commit.png)
+
+ Núna höfum við committað öllum skránum okkar, og commit skilaboðin eru "first commit". Núna erum við búin að taka snapshot af því hvernig mappan lítur út akkurat núna, og við getum hvenær sem er farið til baka og séð möppuna eins og hún er núna.
+
+ Til þess að færa það sem við committuðum í github getum við gert
+
+ ```sh
+ git push origin master
+ ```
+
+ ![Git push](/git-push.png)
+
+ Þið verðið kannski spurð um að skrifa inn notendanafnið ykkar og password.
+
+ Núna sjáum við að allar skrárnar okkar eru komnar inná github
+
+  ![Full repository](/full-repository.png)
+
+Núna ætla ég að breyta skránni `leidbeiningar.md` og færa nýjustu breytinguna upp á github. Eftir að hafa breytt skránni mun ég gera eftirfarandi.
+
+```sh
+git add .
+git commit -m "added more instructions to leidbeiningar.md"
+git push origin master
+```
+
+Við sjáum að þetta eru Galdraskipanirnar þrjár sem þið munið nota mjög oft. `git add`, `git commit` og `git push`.
 
 ## Auðvelda leiðin fyrir einstaklings verkefnin.
 
